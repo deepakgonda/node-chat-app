@@ -2,13 +2,17 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "Node-Socket Based Chat Application",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "8.11.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://deepakgonda@github.com/deepakgonda/node-chat-app.git"
+    "url": "git+https://github.com/deepakgonda/node-chat-app.git"
   },
   "keywords": [
     "Node",
