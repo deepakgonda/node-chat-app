@@ -1,0 +1,25 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Node-Socket Based Chat Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://deepakgonda@github.com/deepakgonda/node-chat-app.git"
+  },
+  "keywords": [
+    "Node",
+    "Socket.io",
+    "chat-app",
+    "node-based-chat-app"
+  ],
+  "author": "Deepak Pandey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakgonda/node-chat-app/issues"
+  },
+  "homepage": "https://github.com/deepakgonda/node-chat-app#readme"
+}
