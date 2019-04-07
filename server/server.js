@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
+const cloudinary = require('cloudinary').v2;
 
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
@@ -22,3 +23,26 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
     console.log(`Server is up on ${port}`);
 });
+
+// Hosting Mosiac App getCloudinary apps for testing
+app.get('/getCloudinaryImages', function (request, response) {
+    response.header('Access-Control-Allow-Origin', '*');
+    response.header('Access-Control-Allow-Credentials', 'true');
+    response.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    response.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    cloudinary.config({
+        cloud_name: 'grandcanyon',
+        api_key: '461728318934769',
+        api_secret: 'SiMrGNBuKyQPcOTWTvPZSaJncjA'
+    });
+
+    cloudinary.api.resources(
+        { type: 'upload' }, function (error, result) {
+            // console.log(result);
+            if (error) return response.send({ error: error }).status(500);
+
+            response.json(result);
+        }
+    );
+})
