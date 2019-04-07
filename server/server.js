@@ -37,8 +37,14 @@ app.get('/getCloudinaryImages', function (request, response) {
         api_secret: 'SiMrGNBuKyQPcOTWTvPZSaJncjA'
     });
 
+    let requestConfig = {
+        type: 'upload',
+        max_results: request.param('max_results') ? request.param('max_results') : 10,
+        next_cursor: request.param('next_cursor') ?  request.param('next_cursor'): ""
+    }
+
     cloudinary.api.resources(
-        { type: 'upload' }, function (error, result) {
+        requestConfig, function (error, result) {
             // console.log(result);
             if (error) return response.send({ error: error }).status(500);
 
